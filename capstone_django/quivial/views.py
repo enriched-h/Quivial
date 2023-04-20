@@ -11,27 +11,41 @@ from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, reverse
 
-# Landing page for all users
+
 def index(request):
+    """
+       Render the index.html template, the first page that the user sees when entering the website.  
+    """
     return render(request, 'quivial/index.html')
 
-                 
-# Registered users are taken to this past after succesfully logging in
+                
 def user_home(request):
+    """
+       Render the user_home.html template for registered and logged in users, which displays the site rules and a button to navigate to the play view.
+    """
     return render(request, 'quivial/user_home.html')
 
 
 @login_required()
-def play(request, num_questions=10):
+def play(request):
+    """
+       Render the play.html template, which displays the dad jokes. 
+    """
     return render(request, "quivial/play.html")
 
 
-# Allows registered users to login
 def user_login(request):
+    """ 
+        Render the login.html template found in the authentication directory of the Quivial folder for user authentication.
+    """
     return render(request, 'quivial/authentication/login.html')
 
 
 def authenticate_user(request):
+    """
+       Authenticate the user by checking the username and password submitted in a POST request. If the credentials are correct, log in the user and
+       redirect to the user_home view with a success message. If the credentials are incorrect, redirect to the login view with an error message.
+    """
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(username=username, password=password)
@@ -52,10 +66,19 @@ def authenticate_user(request):
 
 # Registers users 
 def user_register(request):
+    """
+        Render the register.html template found in the authentication directory of the Quivial folder for user registration.
+    """
+
     return render(request, 'quivial/authentication/register.html')
 
 
 def authenticate_registered_user(request):
+    """
+       Authenticate a new user by creating a new User object with the submitted username and password. If the username already exists, 
+       redirect to the registration view with an error message. If the username is unique, save the new user's credentials, log in the user, 
+       and redirect to the user_home view with a success message.
+    """
     username = request.POST['username']
     password = request.POST['password']
     new_user =  User.objects.create_user(username=username, password=password)
@@ -76,6 +99,9 @@ def authenticate_registered_user(request):
 
 # Allows users to logout
 def user_logout(request):
+    """
+        Log out the user and redirect to the user_home view where they can choose to log in or register. This function does not return anything.
+    """
     return HttpResponseRedirect(
         reverse ('quivial:user_home')
     )
