@@ -64,7 +64,6 @@ def authenticate_user(request):
         )
 
 
-# Registers users 
 def user_register(request):
     """
         Render the register.html template found in the authentication directory of the Quivial folder for user registration.
@@ -97,7 +96,6 @@ def authenticate_registered_user(request):
         )
 
 
-# Allows users to logout
 def user_logout(request):
     """
         Log out the user and redirect to the user_home view where they can choose to log in or register. This function does not return anything.
