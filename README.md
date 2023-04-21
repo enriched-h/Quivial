@@ -8,7 +8,7 @@ Python 3.9 or later
 Django 3.2 or later
 Other dependencies listed in requirements.txt
 Installation
-Clone this repository: git clone https://github.com/your-username/dad-jokes-app.git
+Clone this repository: git clone https://github.com/enriched-h/Quivial.git
 Change into the project directory: cd dad-jokes-app
 Install the dependencies: pip install -r requirements.txt
 Migrate the database: python manage.py migrate
