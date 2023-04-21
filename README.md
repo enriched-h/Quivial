@@ -1,5 +1,5 @@
-Dad Jokes App
-This Django web application displays a list of dad jokes and allows users to authenticate and view jokes.
+Quivial App
+This Django web application displays a list of dad jokes and allows users to authenticate and view dad jokes.
 
 Requirements
 To run this application, you'll need:
@@ -7,6 +7,7 @@ To run this application, you'll need:
 Python 3.9 or later
 Django 3.2 or later
 Other dependencies listed in requirements.txt
+
 Installation
 Clone this repository: git clone https://github.com/enriched-h/Quivial.git
 Change into the project directory: cd dad-jokes-app
@@ -18,7 +19,7 @@ Usage
 Once the development server is running, you can access the application at http://localhost:8000/.
 
 
-To view the list of jokes, register for the app navigate to the home page.
+To view the list of dad jokes, register for the app and navigate to the home page.
 
 
 
@@ -30,8 +31,7 @@ Create a new branch for your feature or bug fix: git checkout -b your-branch-nam
 Make your changes and commit them: git commit -m "Your commit message"
 Push your changes to your fork: git push origin your-branch-name
 Open a pull request on this repository.
-License
-This project is licensed under the MIT License. See the LICENSE file for more information.
+
 
 
 Credits
