@@ -1,0 +1,18 @@
+FROM python:3.9-slim-buster
+
+WORKDIR /app
+
+# Copy the source code into the container
+COPY . .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Configure Nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx and Gunicorn
+CMD ["bash", "start.sh"]
